@@ -11,4 +11,3 @@ if __name__ == "__main__":
     print(result)  # Should print [10.0, 20.0, 30.0]
 
     py_init()  # Initialize the engine
-    
