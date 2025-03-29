@@ -80,3 +80,5 @@ uv.lock
 # Rust
 /target
 
+# project
+temp/
