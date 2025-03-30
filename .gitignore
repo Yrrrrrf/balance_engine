@@ -82,3 +82,5 @@ uv.lock
 
 # project
 temp/
+docs/
+!**/**/**phase-**

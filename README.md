@@ -1,6 +1,5 @@
 <h1 align="center">
-  <!-- <img src="https://raw.githubusercontent.com/Yrrrrrf/balance_engine/main/resources/img/prism.png" alt="Prism Icon" width="128" height="128" description="A prism that can take one light source and split it into multiple colors!"> -->
-  <img src="./resources/img/success.png" alt="Balance Engine Optimization Icon" width="128" height="128">
+  <img src="https://raw.githubusercontent.com/Yrrrrrf/balance_engine/refs/heads/main/resources/img/success.png" alt="Balance Engine Optimization Icon" width="128" height="128">
   <div align="center">Balance Engine</div>
 </h1>
 
@@ -21,6 +20,8 @@ The tool handles key production variables including:
 ```bash
 pip install balance-engine
 ```
+
+
 
 ## Features
 
