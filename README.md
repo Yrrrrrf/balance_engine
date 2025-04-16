@@ -3,6 +3,17 @@
   <div align="center">Balance Engine</div>
 </h1>
 
+<div align="center">
+
+[![GitHub](https://img.shields.io/badge/GitHub-balance__engine-181717?logo=github)](https://github.com/Yrrrrrf/balance_engine)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://choosealicense.com/licenses/mit/)
+[![PyPI version](https://img.shields.io/pypi/v/balance-engine?logo=python)](https://pypi.org/project/balance-engine/)
+<!-- [![Downloads](https://pepy.tech/badge/prism-py)](https://pepy.tech/project/prism-py) -->
+[![Crates.io](https://img.shields.io/crates/v/balance_engine.svg?logo=rust)](https://crates.io/crates/balance_engine)
+[![Crates.io Downloads](https://img.shields.io/crates/d/balance_engine)](https://crates.io/crates/balance_engine)
+
+</div>
+
 > A Python/Rust module for production planning and optimization using linear programming.
 
 **Balance Engine** automates calculations to balance production with demand, allowing for precise and efficient planning while reducing costs. It uses linear programming modeling to optimize resource allocation in limited production cycles.
@@ -17,8 +28,16 @@ The tool handles key production variables including:
 
 ## Installation
 
+### Python Package
+
 ```bash
 pip install balance-engine
+```
+
+### Rust Crate
+
+```bash
+cargo add balance_engine
 ```
 
 ## Features
@@ -33,20 +52,28 @@ pip install balance-engine
 - **Rust Core**: High-performance linear programming solver
 - **Python Interface**: Easy-to-use API for integration with data analysis workflows
 - **Example Code**: Sample implementations for common production planning scenarios
-### Building from Source
 
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/balance-engine.git
-cd balance-engine
+## Usage
 
-# Build the package
-maturin develop
+```python
+import engine
 
-# Run tests
-pytest python/tests
+# Initialize the engine
+engine.init()
+
+# Use the optimization functions
+result = engine.optimize_production_plan(
+    products=["ProductA", "ProductB"],
+    demand_dict={"ProductA": 100, "ProductB": 150},
+    production_rates_dict={"ProductA": 10, "ProductB": 15},
+    available_hours=20,
+    current_inventory_dict={"ProductA": 20, "ProductB": 10},
+    min_inventory_dict={"ProductA": 10, "ProductB": 20}
+)
+
+print(result)
 ```
 
-<!-- ## License
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. -->
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
