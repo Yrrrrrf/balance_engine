@@ -24,8 +24,11 @@ exclude = [
 ]
 
 [lib]
-name = "balance_engine"
-crate-type = ["cdylib", "rlib"]
+name = "engine"
+crate-type = [
+    "cdylib",   # C-compatible dynamic library
+    "rlib"      # Rust library
+]
 
 # COMPILE OPTIMIZATION ------------------------------------------------------------------------
 [profile.dev]
