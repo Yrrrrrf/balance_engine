@@ -21,8 +21,6 @@ The tool handles key production variables including:
 pip install balance-engine
 ```
 
-
-
 ## Features
 
 - **Hybrid Architecture**: Core optimization in Rust for performance, Python API for flexibility

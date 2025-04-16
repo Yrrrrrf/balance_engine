@@ -23,10 +23,9 @@ exclude = [
     "examples/*.py",
 ]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [lib]
 name = "balance_engine"
-crate-type = ["cdylib"]
+crate-type = ["cdylib", "rlib"]
 
 # COMPILE OPTIMIZATION ------------------------------------------------------------------------
 [profile.dev]
@@ -48,18 +47,10 @@ dev_utils = "0.1.1"
 # good_lp = { version = "1.13.0", features = ["coin_cbc"] }
 good_lp = { version = "1.13.0", default-features = false, features = ["microlp"] }
 
-# *REMOVE COMMENT TO IMPLEMENT PYTHON BINDINGS!
-# *REMOVE COMMENT TO IMPLEMENT PYTHON BINDINGS!
-# *REMOVE COMMENT TO IMPLEMENT PYTHON BINDINGS!
-
 # # Python bindings
-# [dependencies.pyo3]
-# version = "0.24.0"
-# features = ["abi3-py38", "extension-module"]
-
-# *REMOVE COMMENT TO IMPLEMENT PYTHON BINDINGS!
-# *REMOVE COMMENT TO IMPLEMENT PYTHON BINDINGS!
-# *REMOVE COMMENT TO IMPLEMENT PYTHON BINDINGS!
+[dependencies.pyo3]
+version = "0.24.0"
+features = ["abi3-py310", "extension-module"]
 
 # # FEATURES -----------------------------------------------------------------------------------
 # [features]
