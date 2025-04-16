@@ -7,5 +7,4 @@ fn main() {
     // app_dt!(file!());
     app_dt!(file!(), "package" => ["license", "keywords", "description", "authors"]);
     set_max_level(dev_utils::dlog::Level::Trace);
-
 }

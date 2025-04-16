@@ -72,7 +72,7 @@ docs/_build/
 
 # UV
 .venv
-uv.lock
+.ruff_cache
 
 # 
 .github
@@ -84,6 +84,6 @@ uv.lock
 /target
 
 # project
-temp/
-delta/
-docs/
+/temp/
+/resources/delta/
+/resources/docs/

@@ -45,7 +45,7 @@ exclude = [
     ".venv",
     "resources/",
     "docs/",
-    "examples/*.py",
+    "examples/*.rs",
     "target/",
     "Cargo.lock",
 ]

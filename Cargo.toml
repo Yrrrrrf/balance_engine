@@ -13,7 +13,7 @@ license = "MIT"
 repository = "https://github.com/Yrrrrrf/balance_engine"
 readme = "README.md"
 keywords = ["optimization", "production-planning", "linear-programming", "supply-chain", "inventory-management"]
-categories = ["mathematics", "algorithms", "science", "optimization", "data-structures"]
+categories = ["mathematics", "algorithms", "data-structures"]
 
 exclude = [
     "./github",
@@ -48,10 +48,18 @@ dev_utils = "0.1.1"
 # good_lp = { version = "1.13.0", features = ["coin_cbc"] }
 good_lp = { version = "1.13.0", default-features = false, features = ["microlp"] }
 
-# Python bindings
-[dependencies.pyo3]
-version = "0.24.0"
-features = ["abi3-py38", "extension-module"]
+# *REMOVE COMMENT TO IMPLEMENT PYTHON BINDINGS!
+# *REMOVE COMMENT TO IMPLEMENT PYTHON BINDINGS!
+# *REMOVE COMMENT TO IMPLEMENT PYTHON BINDINGS!
+
+# # Python bindings
+# [dependencies.pyo3]
+# version = "0.24.0"
+# features = ["abi3-py38", "extension-module"]
+
+# *REMOVE COMMENT TO IMPLEMENT PYTHON BINDINGS!
+# *REMOVE COMMENT TO IMPLEMENT PYTHON BINDINGS!
+# *REMOVE COMMENT TO IMPLEMENT PYTHON BINDINGS!
 
 # # FEATURES -----------------------------------------------------------------------------------
 # [features]
