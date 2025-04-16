@@ -4,23 +4,52 @@ build-backend = "maturin"
 
 [project]
 name = "balance_engine"
-requires-python = ">=3.8"
+description = "Production planning and optimization engine using linear programming to balance supply with demand while minimizing costs and respecting resource constraints"
+requires-python = ">=3.12"
+authors = [
+    {name = "Fernando Bryan Reza Campos", email = "fer.rezac@outlook.com"},
+    {name = "Perla Edith Lugo Hernández", email = "edithlugo@gmail.com"},
+    {name = "Kevin Alexis Martínez Sánchez", email = "xdkevinalexisxd120@gmail.com"},
+    {name = "Fernando Ramírez López", email = "frl23112001@gmail.com"}
+]
 classifiers = [
     "Programming Language :: Rust",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Manufacturing",
 ]
+keywords = ["optimization", "production-planning", "linear-programming", "supply-chain", "inventory-management"]
+license = {text = "MIT"}
 dynamic = ["version"]
+readme = "README.md"
 dependencies = [
-    "matplotlib>=3.7.5",
+    "matplotlib>=3.10.1",
     "pulp>=3.1.1",
-    "scipy>=1.10.1",
+    "scipy>=1.15.2",
     "tabulate>=0.9.0",
 ]
+
 [project.optional-dependencies]
 tests = [
     "pytest",
 ]
+
 [tool.maturin]
 python-source = "python"
 features = ["pyo3/extension-module"]
+exclude = [
+    ".github",
+    ".venv",
+    "resources/",
+    "docs/",
+    "examples/*.py",
+    "target/",
+    "Cargo.lock",
+]
+
+[project.urls]
+Repository = "https://github.com/Yrrrrrf/balance_engine"
+"Bug Tracker" = "https://github.com/Yrrrrrf/balance_engine/issues"

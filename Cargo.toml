@@ -1,20 +1,65 @@
 [package]
 name = "balance_engine"
-version = "0.1.0"
-edition = "2021"
-authors = ["Fernando Bryan Reza Campos <fer.rezac@outlook.com>"]
-description = "A simple balance engine"
+version = "0.0.1"
+edition = "2024"
+authors = [
+    "Fernando Bryan Reza Campos <fer.rezac@outlook.com>",
+    "Perla Edith Lugo Hernández <edithlugo@gmail.com>",
+    "Kevin Alexis Martínez Sánchez <xdkevinalexisxd120@gmail.com>",
+    "Fernando Ramírez López <frl23112001@gmail.com>",
+]
+description = "Production planning and optimization engine using linear programming to balance supply with demand while minimizing costs and respecting resource constraints"
 license = "MIT"
+repository = "https://github.com/Yrrrrrf/balance_engine"
+readme = "README.md"
+keywords = ["optimization", "production-planning", "linear-programming", "supply-chain", "inventory-management"]
+categories = ["mathematics", "algorithms", "science", "optimization", "data-structures"]
+
+exclude = [
+    "./github",
+    "./venv",
+    "resources/",
+    "docs/",
+    "examples/*.py",
+]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [lib]
 name = "balance_engine"
 crate-type = ["cdylib"]
 
+# COMPILE OPTIMIZATION ------------------------------------------------------------------------
+[profile.dev]
+opt-level = 0  # no optimizations (fastest compile time, slowest runtime)
+
+[profile.dev.package."*"]
+opt-level = 3  # Optimize the dependencies at the highest level
+
+[profile.release]
+opt-level = 3  # full optimizations
+lto = true     # link-time optimizations for better runtime performance
+
+# DEPENDENCIES --------------------------------------------------------------------------------
 [dependencies]
+# Development utilities
 dev_utils = "0.1.1"
 
+# Optimization solvers
+# good_lp = { version = "1.13.0", features = ["coin_cbc"] }
+good_lp = { version = "1.13.0", default-features = false, features = ["microlp"] }
 
+# Python bindings
 [dependencies.pyo3]
 version = "0.24.0"
 features = ["abi3-py38", "extension-module"]
+
+# # FEATURES -----------------------------------------------------------------------------------
+# [features]
+# default = ["basic"]
+
+# # Different optimization capabilities
+# full = [
+#     "basic",
+#     "advanced",
+#     "sensitivity", 
+# ]  # Enable all features

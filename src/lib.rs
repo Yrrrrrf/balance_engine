@@ -117,7 +117,7 @@ fn optimize_production_plan(
                 return Err(pyo3::exceptions::PyKeyError::new_err(format!(
                     "Product '{}' not found in demand_dict",
                     product
-                )))
+                )));
             }
         };
 
@@ -128,7 +128,7 @@ fn optimize_production_plan(
                 return Err(pyo3::exceptions::PyKeyError::new_err(format!(
                     "Product '{}' not found in production_rates_dict",
                     product
-                )))
+                )));
             }
         };
 
@@ -139,7 +139,7 @@ fn optimize_production_plan(
                 return Err(pyo3::exceptions::PyKeyError::new_err(format!(
                     "Product '{}' not found in current_inventory_dict",
                     product
-                )))
+                )));
             }
         };
 
@@ -150,7 +150,7 @@ fn optimize_production_plan(
                 return Err(pyo3::exceptions::PyKeyError::new_err(format!(
                     "Product '{}' not found in min_inventory_dict",
                     product
-                )))
+                )));
             }
         };
 
