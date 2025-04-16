@@ -25,11 +25,11 @@ pub fn init() -> PyResult<()> {
         "package" => ["authors", "license", "description"]
     );
     // load the pkg version
-    let version = env!("CARGO_PKG_VERSION");
-    let mut info = HashMap::new();
-    info.insert("version", version);
-    println!("{:?}", info);
-    println!("270");
+    // let version = env!("CARGO_PKG_VERSION");
+    // let mut info = HashMap::new();
+    // info.insert("version", version);
+    // println!("{:?}", info);
+    // println!("270");
     Ok(())
 }
 
