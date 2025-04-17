@@ -52,4 +52,4 @@ exclude = [
 
 [project.urls]
 Repository = "https://github.com/Yrrrrrf/balance_engine"
-"Bug Tracker" = "https://github.com/Yrrrrrf/balance_engine/issues"
+Download = "https://github.com/Yrrrrrf/balance_engine/releases"
