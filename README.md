@@ -8,9 +8,9 @@
 [![GitHub](https://img.shields.io/badge/GitHub-balance__engine-181717?logo=github)](https://github.com/Yrrrrrf/balance_engine)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://choosealicense.com/licenses/mit/)
 [![PyPI version](https://img.shields.io/pypi/v/balance-engine?logo=python)](https://pypi.org/project/balance-engine/)
+[![Downloads](https://pepy.tech/badge/balance_engine)](https://pepy.tech/project/balance_engine)
 [![Crates.io](https://img.shields.io/crates/v/balance_engine.svg?logo=rust)](https://crates.io/crates/balance_engine)
 [![Crates.io Downloads](https://img.shields.io/crates/d/balance_engine)](https://crates.io/crates/balance_engine)
-<!-- [![Downloads](https://pepy.tech/badge/prism-py)](https://pepy.tech/project/prism-py) -->
 
 </div>
 
