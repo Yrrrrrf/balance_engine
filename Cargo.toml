@@ -1,6 +1,6 @@
 [package]
 name = "balance_engine"
-version = "0.0.2"
+version = "0.0.3-rc1"
 edition = "2024"
 authors = [
     "Fernando Bryan Reza Campos <fer.rezac@outlook.com>",
@@ -16,11 +16,15 @@ keywords = ["optimization", "production-planning", "linear-programming", "supply
 categories = ["mathematics", "algorithms", "data-structures"]
 
 exclude = [
-    "./github",
-    "./venv",
+    ".github",
+    ".ruff_cache",
+    ".venv",
+    "dist",
+    "python",
     "resources/",
-    "docs/",
     "examples/*.py",
+    "temp/",
+    "*.lock"
 ]
 
 [lib]
