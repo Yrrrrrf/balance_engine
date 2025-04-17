@@ -127,104 +127,109 @@ def main():
                     f"{j}: Requirement = {octane_requirement[j]}, Achieved = {achieved_octane:.2f}"
                 )
 
-        # Visualize the results
-        plot_results(
-            raw_materials,
-            products,
-            z,
-            y,
-            max_available,
-            demand,
-            octane_requirement,
-            octane_number,
-        )
+        # # Visualize the results
+        # plot_results(
+        #     raw_materials,
+        #     products,
+        #     z,
+        #     y,
+        #     max_available,
+        #     demand,
+        #     octane_requirement,
+        #     octane_number,
+        # )
     else:
         print("No optimal solution found.")
 
 
-def plot_results(
-    raw_materials,
-    products,
-    z,
-    y,
-    max_available,
-    demand,
-    octane_requirement,
-    octane_number,
-):
-    """Create visualization of production mix optimization results"""
-    fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(12, 15))
+# def plot_results(
+#     raw_materials,
+#     products,
+#     z,
+#     y,
+#     max_available,
+#     demand,
+#     octane_requirement,
+#     octane_number,
+# ):
+#     """Create visualization of production mix optimization results"""
+#     fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(12, 15))
 
-    # Production quantities vs. demand
-    ind = np.arange(len(products))
-    width = 0.35
+#     # Production quantities vs. demand
+#     ind = np.arange(len(products))
+#     width = 0.35
 
-    production = [y[j].value() for j in products]
-    demand_values = [demand[j] for j in products]
+#     production = [y[j].value() for j in products]
+#     demand_values = [demand[j] for j in products]
 
-    ax1.bar(ind - width / 2, production, width, label="Production")
-    ax1.bar(ind + width / 2, demand_values, width, label="Demand", alpha=0.7)
-    ax1.set_ylabel("Tons")
-    ax1.set_title("Production vs. Demand")
-    ax1.set_xticks(ind)
-    ax1.set_xticklabels(products)
-    ax1.legend()
+#     ax1.bar(ind - width / 2, production, width, label="Production")
+#     ax1.bar(ind + width / 2, demand_values, width, label="Demand", alpha=0.7)
+#     ax1.set_ylabel("Tons")
+#     ax1.set_title("Production vs. Demand")
+#     ax1.set_xticks(ind)
+#     ax1.set_xticklabels(products)
+#     ax1.legend()
 
-    # Raw material utilization
-    material_usage = [sum(z[i, j].value() for j in products) for i in raw_materials]
-    material_capacity = [max_available[i] for i in raw_materials]
+#     # Raw material utilization
+#     material_usage = [sum(z[i, j].value() for j in products) for i in raw_materials]
+#     material_capacity = [max_available[i] for i in raw_materials]
 
-    ind = np.arange(len(raw_materials))
-    ax2.bar(ind, material_usage, width, label="Used")
-    ax2.bar(ind, material_capacity, width, label="Available", alpha=0.3)
-    ax2.set_ylabel("Tons")
-    ax2.set_title("Raw Material Utilization")
-    ax2.set_xticks(ind)
-    ax2.set_xticklabels(raw_materials)
-    ax2.legend()
+#     ind = np.arange(len(raw_materials))
+#     ax2.bar(ind, material_usage, width, label="Used")
+#     ax2.bar(ind, material_capacity, width, label="Available", alpha=0.3)
+#     ax2.set_ylabel("Tons")
+#     ax2.set_title("Raw Material Utilization")
+#     ax2.set_xticks(ind)
+#     ax2.set_xticklabels(raw_materials)
+#     ax2.legend()
 
-    # Product composition visualization
-    bottom = np.zeros(len(products))
+#     # Product composition visualization
+#     bottom = np.zeros(len(products))
 
-    # Calculate proportions from the amount variables
-    proportions = {}
-    for j in products:
-        if y[j].value() > 0.001:  # Avoid division by zero
-            total_product = y[j].value()
-            for i in raw_materials:
-                proportions[i, j] = z[i, j].value() / total_product
-        else:
-            for i in raw_materials:
-                proportions[i, j] = 0
+#     # Calculate proportions from the amount variables
+#     proportions = {}
+#     for j in products:
+#         if y[j].value() > 0.001:  # Avoid division by zero
+#             total_product = y[j].value()
+#             for i in raw_materials:
+#                 proportions[i, j] = z[i, j].value() / total_product
+#         else:
+#             for i in raw_materials:
+#                 proportions[i, j] = 0
 
-    for i, material in enumerate(raw_materials):
-        values = [proportions[material, j] for j in products]
-        ax3.bar(ind, values, width, bottom=bottom, label=f"Material {material}")
-        bottom += values
+#     for i, material in enumerate(raw_materials):
+#         values = [proportions[material, j] for j in products]
+#         ax3.bar(ind, values, width, bottom=bottom, label=f"Material {material}")
+#         bottom += values
 
-    ax3.set_ylabel("Proportion")
-    ax3.set_title("Product Composition")
-    ax3.set_xticks(ind)
-    ax3.set_xticklabels(products)
-    ax3.legend()
+#     ax3.set_ylabel("Proportion")
+#     ax3.set_title("Product Composition")
+#     ax3.set_xticks(ind)
+#     ax3.set_xticklabels(products)
+#     ax3.legend()
 
-    # Add octane values as text annotations
-    for j_idx, j in enumerate(products):
-        if y[j].value() > 0.001:  # Only calculate if product is produced
-            weighted_octane = sum(
-                octane_number[i] * proportions[i, j] for i in raw_materials
-            )
-            ax3.text(
-                j_idx,
-                1.05,
-                f"Octane: {weighted_octane:.1f}\nReq: {octane_requirement[j]}",
-                ha="center",
-                va="bottom",
-            )
+#     # Add octane values as text annotations
+#     for j_idx, j in enumerate(products):
+#         if y[j].value() > 0.001:  # Only calculate if product is produced
+#             weighted_octane = sum(
+#                 octane_number[i] * proportions[i, j] for i in raw_materials
+#             )
+#             ax3.text(
+#                 j_idx,
+#                 1.05,
+#                 f"Octane: {weighted_octane:.1f}\nReq: {octane_requirement[j]}",
+#                 ha="center",
+#                 va="bottom",
+#             )
 
-    plt.tight_layout()
-    plt.show()
+#     plt.tight_layout()
+#     plt.show()
 
 
 if __name__ == "__main__":
-    main()
+    import time
+
+    d_time = time.time()
+    main()  # run the main function
+    d_time = time.time() - d_time
+    print(f"Elapsed time: {d_time * 1000:.4f} ms")

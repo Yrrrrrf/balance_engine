@@ -153,8 +153,8 @@ def main():
                 f"{t:<10} {machine_used:.1f}/{machine_capacity[t]} ({machine_util:.1f}%) {' ' * 5} {labor_used:.1f}/{labor_capacity[t]} ({labor_util:.1f}%)"
             )
 
-        # Visualize the results
-        plot_results(periods, products, x, inv, demand)
+        # # Visualize the results
+        # plot_results(periods, products, x, inv, demand)
     else:
         print("No optimal solution found.")
 
@@ -207,4 +207,9 @@ def plot_results(periods, products, x, inv, demand):
 
 
 if __name__ == "__main__":
-    main()
+    import time
+
+    d_time = time.time()
+    main()  # run the main function
+    d_time = time.time() - d_time
+    print(f"Elapsed time: {d_time * 1000:.2f} ms")
