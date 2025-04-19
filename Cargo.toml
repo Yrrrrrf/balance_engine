@@ -1,6 +1,6 @@
 [package]
 name = "balance_engine"
-version = "0.0.3-rc1"
+version = "0.0.3"
 edition = "2024"
 authors = [
     "Fernando Bryan Reza Campos <fer.rezac@outlook.com>",
