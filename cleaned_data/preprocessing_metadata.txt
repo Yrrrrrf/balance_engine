@@ -1,0 +1,2 @@
+preprocessing_date: 2025-04-22 18:36:54
+files_processed: {'supply_demand': (20, 22), 'yield': (4, 183), 'boundary_conditions': (13, 185)}

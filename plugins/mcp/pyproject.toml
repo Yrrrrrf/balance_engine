@@ -1,0 +1,21 @@
+# [build-system]
+# requires = ["hatchling"]
+# build-backend = "hatchling.build"
+
+[project]
+name = "balance-engine-mcp"
+version = "0.1.0"
+description = "MCP server plugin for Balance Engine"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp[cli]>=1.2.0",
+    "httpx>=0.24.0",
+]
+
+[tool.uv]
+python-requirements = ">=3.10"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+]
